@@ -9,6 +9,8 @@ const RegisterForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [err, setErr] = useState(false);
+    const [errorText, setErrorText] = useState('');
 
     async function registerUser(event) {
         event.preventDefault()
@@ -24,6 +26,9 @@ const RegisterForm = () => {
             }),
         })
         const data = await response.json();
+        setErrorText(data.message);
+        setErr(true);
+
 
         if (data.status === 'ok') {
             navigate('/login')
@@ -36,7 +41,7 @@ const RegisterForm = () => {
 
             <form onSubmit={registerUser} style={{ textAlign: 'center' }}>
                 <TextField color="secondary" label="Full Name" type="text" value={name} onChange={(e) => setName(e.target.value)} required fullWidth margin="normal" autoComplete="name" autoFocus />
-                <TextField color="secondary" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required fullWidth margin="normal" autoComplete="email" />
+                <TextField color="secondary" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required fullWidth margin="normal" autoComplete="email" error={err} helperText={errorText} />
                 <TextField color="secondary" label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required fullWidth margin="normal" />
 
                 <Button type="submit" id={styles.signInButton} variant="contained" color="secondary">
