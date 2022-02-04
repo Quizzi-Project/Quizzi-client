@@ -1,0 +1,18 @@
+.container {
+    margin-top: 15vh;
+}
+
+#signInButton {
+    width: 210px;
+    height: 58px;
+    background-color: #F84570;
+    border-radius: 100px;
+    margin-top: 5vh;
+}
+
+#regLink {
+    display: block;
+    color: #F84570;
+    font-weight: bold;
+    text-align: center;
+}
