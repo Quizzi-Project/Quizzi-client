@@ -1,0 +1,25 @@
+.container {
+    background-color: #2A0D2E;
+}
+
+* { font-family:'Open Sans', sans-serif; }
+
+h1, h2, h3, p{
+    color: #FA5075;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+#gameButton{
+    background-color: #FA5075;
+    border-radius: 100px;
+    color: #ffffff;
+    margin-left: 30vh;
+}
+
+.page_background{
+    background-color: #2A0D2E;
+}
