@@ -1,10 +1,16 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from '../Pages/Dashboard';
+import Login from '../Pages/Login';
+import Register from '../Pages/Register';
 
 const ReactRouter = () => {
-    return(
+    return (
         <Routes>
-            {/* <Route exact path="/" element={<IdeasList/>}/> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route exact path="/" element={<Dashboard />} />
+            <Route path="/leaderboard" element={<Dashboard />} />
         </Routes>
     )
 }
