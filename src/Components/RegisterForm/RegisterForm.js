@@ -14,7 +14,8 @@ const RegisterForm = () => {
 
     async function registerUser(event) {
         event.preventDefault()
-        const response = await fetch('http://localhost:3001/api/players', {
+        // const response = await fetch('http://localhost:3001/api/players', {
+        const response = await fetch('https://quizzifinal.herokuapp.com/api/players', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
