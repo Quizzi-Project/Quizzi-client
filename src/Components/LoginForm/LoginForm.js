@@ -24,7 +24,7 @@ const LoginForm = () => {
 
         if (data.token) {
             localStorage.setItem('token', data.token);
-            navigate('/dashboard');
+            navigate('/');
         } else {
             alert('Please check your username and password')
         }
