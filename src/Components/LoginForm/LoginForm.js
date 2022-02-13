@@ -10,8 +10,8 @@ const LoginForm = () => {
 
     async function loginUser(event) {
         event.preventDefault()
-        // const response = await fetch('http://localhost:3001/api/players/login', {
-        const response = await fetch('https://quizzifinal.herokuapp.com/api/players/login', {
+        const response = await fetch('http://localhost:3001/api/players/login', {
+        // const response = await fetch('https://quizzifinal.herokuapp.com/api/players/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
