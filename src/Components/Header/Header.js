@@ -6,7 +6,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from '@material-ui/icons/Close';
 import classes from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
-
+import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
+import GradeIcon from '@material-ui/icons/Grade';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -25,9 +28,11 @@ const Header = () => {
         navigate('/login')
     }
     const navigationLinks = [
-        { name: "Home", href: "/" },
-        { name: "Leaderboard", href: "/leaderboard" },
-        { name: "logout", href: "/login", click: (logoutUser) },
+        { name: "Home", href: "/", icon: <HomeIcon className={classes.icon} /> },
+        { name: "Profile", href: "/profile", icon: <PersonIcon className={classes.icon} /> },
+        { name: "Leaderboard", href: "/leaderboard", icon: <GradeIcon className={classes.icon} /> },
+        { name: "logout", href: "/login", click: (logoutUser), icon: <ExitToAppIcon className={classes.icon} /> },
+
     ];
     const styles = useStyles();
     const [open, setOpen] = useState(false);
@@ -61,12 +66,14 @@ const Header = () => {
                 <List >
                     {navigationLinks.map((item) => (
                         <ListItem key={item.name}>
+                            {item.icon}
                             <Link
                                 className={styles.link}
                                 color="textPrimary"
                                 variant="button"
                                 underline="none"
                                 href={item.href}
+                                icon={item.icon}
                                 onClick={item.click}
                             >
                                 {item.name}
