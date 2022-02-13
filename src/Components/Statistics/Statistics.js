@@ -22,9 +22,9 @@ const Statistics = () => {
     return (
         <Container maxWidth="xs" className={styles.container}>
             <Typography align="center" className={styles.typo} variant='h5'>Welcome, {details.name}!</Typography>
-            <Typography align="center" className={styles.typo} variant='h5'>Games Won:{details.gamesWins}</Typography>
-            <Typography align="center" className={styles.typo} variant='h5'>Games Lost:{details.gamesLosses}</Typography>
-            <Typography align="center" className={styles.typo} variant='h5'>Total Points:{details.pointsEarned}</Typography>
+            <Typography align="center" className={styles.typo} variant='h5'>Games Won: {details.gamesWins}</Typography>
+            <Typography align="center" className={styles.typo} variant='h5'>Games Lost: {details.gamesLosses}</Typography>
+            <Typography align="center" className={styles.typo} variant='h5'>Total Points: {details.pointsEarned}</Typography>
             <Typography align='center'>
                 <Button id={styles.gameButt} href='./game' variant="contained" color="secondary">
                     PLAY GAME
