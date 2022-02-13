@@ -25,6 +25,7 @@ const Header = () => {
 
     const logoutUser = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('id');
         navigate('/login')
     }
     const navigationLinks = [
