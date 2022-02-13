@@ -6,12 +6,16 @@ const Statistics = () => {
     const [details, setDetails] = useState('');
     useEffect(() => {
         // fetch(`https://meadaysofcode.herokuapp.com/api/players/${localStorage.getItem('id')}`)
-        fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`)
+        fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
+        })
             .then(res => {
                 return res.json();
             })
             .then(data => {
-                console.log(data[0]);
                 setDetails(data[0]);
             })
     }, []);
