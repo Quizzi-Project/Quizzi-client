@@ -1,0 +1,17 @@
+.container {
+/* background-color: #F84570; */
+}
+
+.typo {
+    padding-top: 6vh;
+
+}
+
+
+#gameButt {
+    width: 310px;
+    height: 58px;
+    background-color: #F84570;
+    border-radius: 100px;
+    margin-top: 33vh;
+}

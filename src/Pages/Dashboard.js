@@ -1,18 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import jwt from "jsonwebtoken";
 import { useNavigate } from 'react-router-dom';
+import Header from "../Components/Header/Header";
+import Statistics from "../Components/Statistics/Statistics";
 
 const Dashboard = () => {
     const navigate = useNavigate();
-    const tempNavigate = useRef();
-    tempNavigate.current = navigate('/login');
-
-
-    const logoutUser = () => {
-        localStorage.removeItem('token');
-        navigate('/login')
-    }
-
 
     useEffect(() => {
         const token = localStorage.getItem('token')
@@ -21,8 +14,6 @@ const Dashboard = () => {
             if (!user) {
                 localStorage.removeItem('token');
                 navigate('/login')
-            } else {
-                console.log('accepted');
             }
         } else {
             navigate('/login')
@@ -30,8 +21,8 @@ const Dashboard = () => {
     }, []);
     return (
         <>
-            <h1>Dashboard</h1>
-            <div onClick={logoutUser}>logout</div>
+            <Header />
+            <Statistics />
         </>
     );
 }
