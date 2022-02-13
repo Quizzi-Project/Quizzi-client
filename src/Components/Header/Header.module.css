@@ -9,8 +9,11 @@
 .navLinks {
     color: #F84570;
 }
+.navLinks :hover{
+    color: #161011;
+}
 
-#regNav {
-    color: #ffffff;
-    /* margin-right: 20vh; */
+.icon{
+    color: #F84570;
+    margin-right: 2vh;
 }
