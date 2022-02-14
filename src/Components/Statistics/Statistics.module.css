@@ -7,11 +7,20 @@
 
 }
 
-
 #gameButt {
-    width: 310px;
+    width: 250px;
     height: 58px;
     background-color: #F84570;
     border-radius: 100px;
     margin-top: 33vh;
+}
+
+@media screen and (max-width: 700px) {
+    #gameButt {
+        width: 180px;
+        height: 55px;
+        background-color: #F84570;
+        border-radius: 100px;
+        margin-top: 33vh;
+    }
 }
