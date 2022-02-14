@@ -34,7 +34,7 @@ const LoginForm = () => {
     return (
         <Container fixed className={styles.container}>
             <Typography variant="h4" align='center' id={styles.title_colors}><b>Welcome to Quizzi!</b><br/><span className={styles.subtitle}>where Learning is FUN</span></Typography>
-            <Typography variant="h3" component="h3" id={styles.login_styling}>Login</Typography>
+            <Typography variant="h3" component="h3" align="center" id={styles.login_styling}>Login</Typography>
 
             <form onSubmit={loginUser} style={{ textAlign: 'center' }}>
                 <TextField color="secondary" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required fullWidth margin="normal" autoComplete="email" autoFocus />

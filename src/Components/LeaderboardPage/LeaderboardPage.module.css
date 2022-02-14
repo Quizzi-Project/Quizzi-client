@@ -1,0 +1,15 @@
+* { font-family:'Open Sans', sans-serif; }
+
+.container {
+    margin-top: 5vh;
+    min-height: 95vh;
+    max-height: 200vh;
+    padding-top: 5vh;
+    border: solid 2px #F84570;
+    background-color: #2A0D2E;
+}
+
+.title{
+    color: #F84570;
+}
+
