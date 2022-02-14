@@ -1,5 +1,10 @@
 .container {
-    margin-top: 15vh;
+    margin-top: 5vh;
+    min-height: 95vh;
+    max-height: 200vh;
+    padding-top: 5vh;
+    border: solid 2px #F84570;
+    background-color: #2A0D2E;
 }
 
 #signInButton {
@@ -15,4 +20,52 @@
     color: #F84570;
     font-weight: bold;
     text-align: center;
+}
+
+#title_colors, .subtitle{
+    color:#F84570;
+    font-weight: bold;
+}
+
+.subtitle{
+    font-size: smaller;
+}
+
+#login_styling{
+    color: #F84570;
+    margin-top: 5vh;
+    margin-left: 76vh; 
+}
+
+.account{
+    color:#ffffff;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 700px) {
+
+    .container {
+        margin-top: 5vh;
+        min-height: 95vh;
+        max-height: 200vh;
+        padding-top: 5vh;
+    }
+
+    #login_styling{
+       margin-left: 16vh;
+       font-size: xx-large;
+    }
+
+    #title_colors{
+        font-size: xx-large;
+    }
+
+    #signInButton {
+        width: 170px;
+        height: 55px;
+        background-color: #F84570;
+        border-radius: 100px;
+        margin-top: 5vh;
+    }
 }

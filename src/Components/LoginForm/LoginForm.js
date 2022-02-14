@@ -32,8 +32,9 @@ const LoginForm = () => {
         }
     }
     return (
-        <Container maxWidth="xs" className={styles.container}>
-            <Typography variant="h4" align='center' >Login</Typography>
+        <Container fixed className={styles.container}>
+            <Typography variant="h4" align='center' id={styles.title_colors}><b>Welcome to Quizzi!</b><br/><span className={styles.subtitle}>where Learning is FUN</span></Typography>
+            <Typography variant="h3" component="h3" id={styles.login_styling}>Login</Typography>
 
             <form onSubmit={loginUser} style={{ textAlign: 'center' }}>
                 <TextField color="secondary" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required fullWidth margin="normal" autoComplete="email" autoFocus />
@@ -42,8 +43,8 @@ const LoginForm = () => {
                 <Button type="submit" id={styles.signInButton} variant="contained" color="secondary">
                     SIGN IN
                 </Button>
-                <Typography style={{ marginTop: '6vh' }} display="block" variant="subtitle2" align='center' >Don't have an account?</Typography>
-                <Link id={styles.regLink} href="/register" variant="body2" >Create Account</Link>
+                <Typography style={{ marginTop: '6vh' }} display="block" variant="subtitle2" align='center' className={styles.account}>Don't have an account?</Typography>
+                <Link id={styles.regLink} href="/register" variant="body2">Create Account</Link>
             </form>
         </Container>
     );
