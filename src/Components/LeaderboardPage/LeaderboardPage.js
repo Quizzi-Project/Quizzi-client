@@ -25,13 +25,13 @@ const LeaderboardPage = () => {
 
 
         return(
-            <TableContainer sx={{ maxHeight: 400, maxWidth: 1200, padding: 3 }} className={styles.container}>
+            <TableContainer sx={{ maxHeight: 400, maxWidth: 1200, padding: 3}} className={styles.container}>
                 <Typography variant="h4" component="h4" align='center' className={styles.title}>LEADERBOARD </Typography>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>  
                             {columns.map((column) => (
-                            <TableCell sx={{minWidth: '25%', color: '#F84570', fontWeight: 'bold'}}
+                            <TableCell sx={{minWidth: 80, color: '#F84570', fontWeight: 'bold'}}
                                 key={column.id}
                                 align={column.align}
                             >

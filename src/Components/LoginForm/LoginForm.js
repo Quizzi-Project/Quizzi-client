@@ -43,7 +43,7 @@ const LoginForm = () => {
                 <Button type="submit" id={styles.signInButton} variant="contained" color="secondary">
                     SIGN IN
                 </Button>
-                <Typography style={{ marginTop: '6vh' }} display="block" variant="subtitle2" align='center' className={styles.account}>Don't have an account?</Typography>
+                <Typography style={{ marginTop: '6vh' }} display="block" variant="subtitle2" align='center'>Don't have an account?</Typography>
                 <Link id={styles.regLink} href="/register" variant="body2">Create Account</Link>
             </form>
         </Container>

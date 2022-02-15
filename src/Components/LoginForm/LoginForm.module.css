@@ -3,8 +3,6 @@
     min-height: 95vh;
     max-height: 200vh;
     padding-top: 5vh;
-    border: solid 2px #F84570;
-    background-color: #2A0D2E;
 }
 
 #signInButton {
@@ -34,10 +32,6 @@
 #login_styling{
     color: #F84570;
     margin-top: 5vh;
-}
-
-.account{
-    color:#ffffff;
 }
 
 
