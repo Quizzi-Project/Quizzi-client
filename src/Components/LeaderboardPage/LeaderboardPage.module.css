@@ -1,15 +1,24 @@
 * { font-family:'Open Sans', sans-serif; }
 
 .container {
-    margin-top: 5vh;
-    min-height: 95vh;
-    max-height: 200vh;
-    padding-top: 5vh;
-    border: solid 2px #F84570;
-    background-color: #2A0D2E;
+     margin-top: 5vh;
+     margin-left: 20vh;
 }
 
 .title{
     color: #F84570;
+    margin-top: 5vh;
+}
+
+.row_width{
+    min-width: 10%;
+}
+
+.font{
+    color: #F84570;
+}
+
+.MuiTableCell-root{
+    font-weight: bold;
 }
 
