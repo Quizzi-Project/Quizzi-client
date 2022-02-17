@@ -19,12 +19,10 @@ const QuizGame = () => {
         let userAnswer = e.target.outerText;
         const res = userAnswer.split(' ').map(item =>
             item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()).join(' ');
-        console.log(res);
 
 
         if (quiz[number].answer === res) setPts(pts + 1);
         setNumber(number + 1);
-        console.log(number);
         if (number == 9) {
             setHideQuiz(true);
             setHideScore(false);
@@ -96,7 +94,6 @@ const QuizGame = () => {
                             <h2 className={styles.quest} dangerouslySetInnerHTML={{ __html: quiz[number].question }}></h2>
 
                             <section>
-                            {console.log(quiz[number])}
                                 {quiz[number].options.map((item, index) => (
                                     <Button variant="contained" color="secondary" id={styles.button} key={index} onClick={pickAnswer}><section dangerouslySetInnerHTML={{ __html: item }} ></section></Button>
 
