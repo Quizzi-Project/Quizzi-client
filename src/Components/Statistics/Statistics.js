@@ -26,7 +26,7 @@ const Statistics = () => {
             <Typography align="center" className={styles.typo} variant='h5'>Games Lost: {details.gamesLosses}</Typography>
             <Typography align="center" className={styles.typo} variant='h5'>Total Points: {details.pointsEarned}</Typography>
             <Typography align='center'>
-                <Button id={styles.gameButt} href='./game' variant="contained" color="secondary">
+                <Button id={styles.gameButt} href='./quiz' variant="contained" color="secondary">
                     PLAY GAME
                 </Button>
             </Typography>
