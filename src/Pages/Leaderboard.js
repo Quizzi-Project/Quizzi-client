@@ -1,9 +1,11 @@
 import Header from "../Components/Header/Header";
+import LeaderboardPage from '../Components/LeaderboardPage/LeaderboardPage';
+
 const Leaderboard = () => {
     return (
         <>
             <Header />
-            <h1>Leaderboard</h1>
+            <LeaderboardPage/>
         </>
 
     );

@@ -1,0 +1,19 @@
+.container{
+    margin-top: 5vh;
+}
+
+#title{
+    font-weight: bold;
+    color: #F84570;
+    margin-bottom: 4vh;
+}
+
+#updateButton{
+    margin-top: 7vh;
+    border-radius: 30px;
+    font-size: small;
+}
+
+#link {
+    text-decoration: none;
+}

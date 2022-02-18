@@ -18,7 +18,6 @@ const Header = () => {
         link: {
             marginRight: '18vh',
             color: '#F84570',
-            // fontWeight: 'bold',
         },
     }));
 
