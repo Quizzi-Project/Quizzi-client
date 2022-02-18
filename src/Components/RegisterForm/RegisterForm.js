@@ -37,15 +37,16 @@ const RegisterForm = () => {
     }
 
     return (
-        <Container maxWidth="xs" className={styles.container}>
-            <Typography variant="h4" align='center' >Register</Typography>
+        <Container fixed className={styles.container}>
+            <Typography variant="h4" align='center' id={styles.title_colors}><b>Welcome to Quizzi!</b><br/><span className={styles.subtitle}>where Learning is FUN</span></Typography>
+            <Typography variant="h3" align='center' id={styles.reg_styling}>Register</Typography>
 
             <form onSubmit={registerUser} style={{ textAlign: 'center' }}>
                 <TextField color="secondary" label="Full Name" type="text" value={name} onChange={(e) => setName(e.target.value)} required fullWidth margin="normal" autoComplete="name" autoFocus />
                 <TextField color="secondary" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required fullWidth margin="normal" autoComplete="email" error={err} helperText={errorText} />
                 <TextField color="secondary" label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required fullWidth margin="normal" />
 
-                <Button type="submit" id={styles.signInButton} variant="contained" color="secondary">
+                <Button type="submit" id={styles.registerButton} variant="contained" color="secondary">
                     Create Account
                 </Button>
                 <Typography style={{ marginTop: '6vh' }} display="block" variant="subtitle2" align='center' >Already have an account?</Typography>

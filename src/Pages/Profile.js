@@ -1,9 +1,11 @@
 import Header from "../Components/Header/Header";
+import EditProfilePage from '../Components/EditProfile/EditProfilePage';
+
 const Profile = () => {
     return (
         <>
             <Header />
-            <h1>Profile</h1>
+            <EditProfilePage/>
         </>
 
     );

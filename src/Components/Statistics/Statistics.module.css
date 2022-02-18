@@ -4,7 +4,8 @@
 
 .typo {
     padding-top: 6vh;
-
+    color: #F84570;
+    text-align: center;
 }
 
 #gameButt {
@@ -15,6 +16,15 @@
     margin-top: 33vh;
 }
 
+#editButton{
+    display: flex;
+    top: 10vh;
+    margin: 0 auto;
+    border-radius: 50px;
+    max-width: 45%;
+    background-color: #ff6d8f;
+}
+
 @media screen and (max-width: 700px) {
     #gameButt {
         width: 180px;
@@ -22,5 +32,16 @@
         background-color: #F84570;
         border-radius: 100px;
         margin-top: 33vh;
+    }
+
+    .typo {
+        padding-top: 4vh;
+        color: #F84570;
+        text-align: left;
+    }
+
+    #editButton{
+        margin-left: 0;
+        max-width: 40%;
     }
 }

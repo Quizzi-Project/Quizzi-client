@@ -1,8 +1,8 @@
 .container {
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 
-#signInButton {
+#registerButton {
     width: 210px;
     height: 58px;
     background-color: #F84570;
@@ -10,9 +10,35 @@
     margin-top: 5vh;
 }
 
-#regLink {
-    display: block;
+#title_colors{
+    /* font-weight: bold; */
+    color: #F84570;
+}
+
+#reg_styling{
+    color: #F84570;
+    margin-top: 5vh;
+}
+
+.subtitle{
+    font-size: smaller;
+}
+
+#regLink{
     color: #F84570;
     font-weight: bold;
-    text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    #registerButton {
+        width: 170px;
+        height: 55px;
+        border-radius: 100px;
+    }
+
+    #reg_styling{
+        font-size: 10vw;
+    }
 }
