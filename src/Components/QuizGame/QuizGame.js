@@ -93,17 +93,9 @@ const QuizGame = () => {
     <>
       <section hidden={hideScore}>
         <Container maxWidth='sm' style={{ marginTop: '33vh' }}>
-          <Typography variant='h5' align='center' id={styles.score}>
-            {' '}
-            You scored {pts} out of {10}
-          </Typography>
+          <Typography variant='h5' align='center' id={styles.score}>{' '}You scored {pts} out of {10}</Typography>
           <Typography align='center'>
-            <Button
-              variant='contained'
-              color='primary'
-              id={styles.homeButton}
-              onClick={handleClickBackToHome}
-            >
+            <Button variant='contained' color='primary' id={styles.homeButton} onClick={handleClickBackToHome}>
               Back To Homepage
             </Button>
           </Typography>
