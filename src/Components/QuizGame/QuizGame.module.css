@@ -1,0 +1,27 @@
+.container {
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+#button {
+    background-color: #F84570;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+
+
+#homeButton {
+    margin-top: 5vh;
+    width: 50%;
+    background-color: #F84570;
+}
+
+.quest {
+    text-align: center;
+}
+
+#curr {
+    margin-top: 5vh;
+}
+

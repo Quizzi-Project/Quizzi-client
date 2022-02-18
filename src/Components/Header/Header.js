@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link, AppBar, IconButton, SwipeableDrawer, Divider, List, ListItem, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ToolBar from "@material-ui/core/ToolBar";
@@ -10,6 +10,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 import GradeIcon from '@material-ui/icons/Grade';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import jwt from "jsonwebtoken";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -20,6 +21,19 @@ const Header = () => {
             color: '#F84570',
         },
     }));
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            const user = jwt.decode(token);
+            if (!user) {
+                localStorage.removeItem('token');
+                navigate('/login')
+            }
+        } else {
+            navigate('/login')
+        }
+    }, []);
 
 
     const logoutUser = () => {

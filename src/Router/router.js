@@ -5,6 +5,7 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Leaderboard from '../Pages/Leaderboard';
 import Profile from '../Pages/Profile';
+import Quiz from '../Pages/Quiz';
 
 
 
@@ -16,6 +17,7 @@ const ReactRouter = () => {
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/quiz" element={<Quiz />} />
         </Routes>
 
     )
