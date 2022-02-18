@@ -16,6 +16,7 @@ const Statistics = () => {
                 return res.json();
             })
             .then(data => {
+                localStorage.setItem('userName', data[0].name);
                 setDetails(data[0]);
             })
     }, []);
