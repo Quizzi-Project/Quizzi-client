@@ -17,7 +17,7 @@ const ReactRouter = () => {
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/game" element={<Quiz />} />
         </Routes>
 
     )

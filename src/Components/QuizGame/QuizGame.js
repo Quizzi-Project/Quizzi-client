@@ -23,7 +23,7 @@ const QuizGame = () => {
 
         if (quiz[number].answer === res) setPts(pts + 1);
         setNumber(number + 1);
-        if (number == 9) {
+        if (number === 9) {
             setHideQuiz(true);
             setHideScore(false);
 
@@ -82,24 +82,25 @@ const QuizGame = () => {
     return (
         <>
             <section hidden={hideScore}>
-                <Container Container maxWidth="sm" style={{ marginTop: '33vh' }} >
-                    <Typography variant="h5" align='center' >  You scored {pts} out of {10}</Typography>
-                    <Typography align='center' > <Button variant="contained" color="primary" href="./" id={styles.homeButton} onClick={confirmScore}>Back To Homepage</Button></Typography>
+                <Container maxWidth="sm" style={{ marginTop: '33vh' }} >
+                    <Typography variant="h5" align='center' id={styles.score}>  You scored {pts} out of {10}</Typography>
+                    <Typography align='center'> <Button variant="contained" color="primary" href="./" id={styles.homeButton} onClick={confirmScore}>Back To Homepage</Button></Typography>
                 </Container>
             </section>
             <section hidden={hideQuiz}>
-                < Container maxWidth="sm" className={styles.container} >
+                < Container maxWidth="sm" className={styles.container}>
+                <div className={styles.circleMeasures}><div className={styles.innerCircle}><div className={styles.bar}><Typography id={styles.curr} align='center' variant='subtitle2'>{number + 1}/{quiz.length}</Typography></div></div></div>
+                    <Typography variant="h4" align='left' id={styles.title}>Question {number + 1}</Typography>
                     {quiz[number] &&
                         <>
                             <h2 className={styles.quest} dangerouslySetInnerHTML={{ __html: quiz[number].question }}></h2>
 
                             <section>
                                 {quiz[number].options.map((item, index) => (
-                                    <Button variant="contained" color="secondary" id={styles.button} key={index} onClick={pickAnswer}><section dangerouslySetInnerHTML={{ __html: item }} ></section></Button>
+                                    <Button variant="contained" color="secondary" id={styles.answerButton} key={index} onClick={pickAnswer}><section dangerouslySetInnerHTML={{ __html: item }} ></section></Button>
 
                                 ))}
                             </section>
-                            <Typography id={styles.curr} align='center' variant='subtitle2'>{number + 1}/{quiz.length}</Typography>
                         </>
                     }
                 </Container>
