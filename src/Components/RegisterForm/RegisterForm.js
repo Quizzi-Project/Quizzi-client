@@ -18,7 +18,6 @@ const RegisterForm = () => {
         event.preventDefault()
        
         const response = await fetch(httpService.getUrl('api/players'), {
-        // const response = await fetch('https://quizzi-app.herokuapp.com/api/players', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

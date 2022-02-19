@@ -8,8 +8,6 @@ const Statistics = () => {
     useEffect(() => {
         
         fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
-        // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
-        // fetch(`  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -25,7 +23,7 @@ const Statistics = () => {
     }, []);
     
     return (
-        <Container maxWidth="xs" className={styles.container}>
+        <Container maxWidth="xs">
             <Typography className={styles.typo} variant='h5'>Welcome, {details.name}!</Typography>
             <Typography className={styles.typo} variant='h5'>Games Won: {details.gamesWins}</Typography>
             <Typography className={styles.typo} variant='h5'>Games Lost: {details.gamesLosses}</Typography>

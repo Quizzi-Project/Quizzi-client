@@ -1,17 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {
-  Container,
-  TextField,
-  Button,
-  Link,
-  Typography,
-} from '@material-ui/core';
+import { useState } from 'react';
+import { Container, TextField, Button, Typography } from '@material-ui/core';
 import styles from './EditProfilePage.module.css';
 import httpService from '../../Services/httpService';
 
 const EditProfilePage = () => {
-  const navigate = useNavigate();
+
   const [requestMessage, setRequestMessage] = useState('');
   const [name, setName] = useState(localStorage.getItem('userName'));
   const [password, setPassword] = useState('');
@@ -22,8 +15,6 @@ const EditProfilePage = () => {
     }
     setRequestMessage('');
     fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
-      // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
-      // fetch(`https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -52,18 +43,8 @@ const EditProfilePage = () => {
         Edit Profile
       </Typography>
       <form onSubmit={updateData} style={{ textAlign: 'center' }}>
-        <TextField
-          id={styles.entry}
-          color='secondary'
-          label='Full Name'
-          type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          fullWidth
-          margin='normal'
-          autoComplete='name'
-          autoFocus
-        />
+        <TextField id={styles.entry} color='secondary' label='Full Name' type='text' value={name} onChange={(e) => setName(e.target.value)}
+          fullWidth margin='normal' autoComplete='name' autoFocus />
         <TextField
           id={styles.entry1}
           color='secondary'

@@ -7,8 +7,8 @@ import ReactRouter from './Router/router';
 
 import httpService from './Services/httpService';
 
-console.log('we are runing in', httpService.getUrl()); // TODO: remove log
-console.log('(process.env.NODE_ENV', process.env.NODE_ENV); // TODO: remove log
+console.log('We are running in', httpService.getUrl());
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 ReactDOM.render(
   <StrictMode>

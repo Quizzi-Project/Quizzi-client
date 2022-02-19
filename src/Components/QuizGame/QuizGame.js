@@ -3,7 +3,7 @@ import { Container, Typography, Button } from '@material-ui/core';
 import styles from './QuizGame.module.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import ProgressBar from "@ramonak/react-progress-bar";
+import ProgressBar from '@ramonak/react-progress-bar';
 import httpService from '../../Services/httpService';
 
 const QuizGame = () => {
@@ -40,7 +40,6 @@ const QuizGame = () => {
   const handleClickBackToHome = async () => {
     await fetch(
       httpService.getUrl(`api/players/${localStorage.getItem('id')}`),
-      // `  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`,
       {
         method: 'PUT',
         headers: {
@@ -57,14 +56,19 @@ const QuizGame = () => {
   };
 
   const renderProgressBar = () => {
-    return <ProgressBar completed={number*10} bgColor='#ff4d77' width='80%' margin='8%'/>;
+    return (
+      <ProgressBar
+        completed={number * 10}
+        bgColor='#ff4d77'
+        width='80%'
+        margin='8%'
+      />
+    );
   };
 
   useEffect(() => {
     function fetchData() {
       fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
-      // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
-      // fetch(`:   https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -102,9 +106,17 @@ const QuizGame = () => {
     <>
       <section hidden={hideScore}>
         <Container maxWidth='sm' style={{ marginTop: '33vh' }}>
-          <Typography variant='h5' align='center' id={styles.score}>{' '}You scored {pts} out of {10}</Typography>
+          <Typography variant='h5' align='center' id={styles.score}>
+            {' '}
+            You scored {pts} out of {10}
+          </Typography>
           <Typography align='center'>
-            <Button variant='contained' color='primary' id={styles.homeButton} onClick={handleClickBackToHome}>
+            <Button
+              variant='contained'
+              color='primary'
+              id={styles.homeButton}
+              onClick={handleClickBackToHome}
+            >
               Back To Homepage
             </Button>
           </Typography>
@@ -113,19 +125,30 @@ const QuizGame = () => {
       <section hidden={hideQuiz}>
         <Container maxWidth='sm' className={styles.container}>
           {renderProgressBar()}
-              <Typography id={styles.progress} align='center' variant='subtitle2'>
-              {number + 1}/{quiz.length}
-              </Typography>
+          <Typography id={styles.progress} align='center' variant='subtitle2'>
+            {number + 1}/{quiz.length}
+          </Typography>
           <Typography variant='h4' align='left' id={styles.title}>
             Question {number + 1}
           </Typography>
           {quiz[number] && (
             <>
-              <h2 className={styles.quest} dangerouslySetInnerHTML={{ __html: quiz[number].question }}></h2>
+              <h2
+                className={styles.quest}
+                dangerouslySetInnerHTML={{ __html: quiz[number].question }}
+              ></h2>
               <section>
                 {quiz[number].options.map((item, index) => (
-                  <Button variant='contained' color='secondary' id={styles.answerButton} key={index} onClick={pickAnswer}>
-                    <section dangerouslySetInnerHTML={{ __html: item }} ></section>
+                  <Button
+                    variant='contained'
+                    color='secondary'
+                    id={styles.answerButton}
+                    key={index}
+                    onClick={pickAnswer}
+                  >
+                    <section
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    ></section>
                   </Button>
                 ))}
               </section>
@@ -133,7 +156,7 @@ const QuizGame = () => {
           )}
         </Container>
       </section>
-    </>
+      </>
   );
 };
 export default QuizGame;
