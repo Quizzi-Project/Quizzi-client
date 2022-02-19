@@ -8,6 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import styles from './EditProfilePage.module.css';
+import httpService from '../../Services/httpService';
 
 const EditProfilePage = () => {
   const navigate = useNavigate();
@@ -20,8 +21,9 @@ const EditProfilePage = () => {
       ev.preventDefault();
     }
     setRequestMessage('');
-    fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
-    // fetch(`https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
+    fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
+      // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+      // fetch(`https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -50,16 +52,41 @@ const EditProfilePage = () => {
         Edit Profile
       </Typography>
       <form onSubmit={updateData} style={{ textAlign: 'center' }}>
-        <TextField id={styles.entry} color='secondary' label='Full Name' type='text'
-          value={name} onChange={(e) => setName(e.target.value)} fullWidth margin='normal' autoComplete='name' autoFocus />
-        <TextField id={styles.entry1} color='secondary' label='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}
-          fullWidth margin='normal' />
-        <Button type='submit' id={styles.updateButton} variant='contained' color='secondary' >
+        <TextField
+          id={styles.entry}
+          color='secondary'
+          label='Full Name'
+          type='text'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          fullWidth
+          margin='normal'
+          autoComplete='name'
+          autoFocus
+        />
+        <TextField
+          id={styles.entry1}
+          color='secondary'
+          label='Password'
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          fullWidth
+          margin='normal'
+        />
+        <Button
+          type='submit'
+          id={styles.updateButton}
+          variant='contained'
+          color='secondary'
+        >
           Update Account
         </Button>
       </form>
       {!!requestMessage && (
-        <Typography id={styles.req} variant='h6'>{requestMessage}</Typography>
+        <Typography id={styles.req} variant='h6'>
+          {requestMessage}
+        </Typography>
       )}
     </Container>
   );

@@ -9,15 +9,15 @@ import {
   TableBody,
 } from '@mui/material';
 import styles from './LeaderboardPage.module.css';
-
+import httpService from '../../Services/httpService';
 
 const LeaderboardPage = () => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     const fetchData = () => {
-      fetch(`http://localhost:3001/api/players`, {
-      // fetch(`https://quizzi-app.herokuapp.com/api/players`, {
+      fetch(httpService.getUrl('api/players'), {
+        // fetch(`https://quizzi-app.herokuapp.com/api/players`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -55,7 +55,7 @@ const LeaderboardPage = () => {
   return (
     <TableContainer sx={{ maxWidth: 1200 }} className={styles.container}>
       <Typography variant='h4' component='h4' align='center' id={styles.title}>
-        <b>LEADERBOARD{' '}</b>
+        <b>LEADERBOARD </b>
       </Typography>
       <Table stickyHeader aria-label='sticky table'>
         <TableHead>

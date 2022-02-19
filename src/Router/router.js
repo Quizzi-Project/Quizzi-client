@@ -10,6 +10,7 @@ import Quiz from '../Pages/Quiz';
 
 
 const ReactRouter = () => {
+
     return (
         <Routes>
             <Route path="/login" element={<Login />} />

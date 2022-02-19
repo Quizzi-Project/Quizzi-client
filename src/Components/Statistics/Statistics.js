@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, Container, Button, Typography } from '@material-ui/core';
+import httpService from '../../Services/httpService';
 import styles from './Statistics.module.css';
 
 const Statistics = () => {
     const [details, setDetails] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+        
+        fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
+        // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
         // fetch(`  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
             headers: {
                 'Content-Type': 'application/json',

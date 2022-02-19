@@ -4,6 +4,7 @@ import styles from './QuizGame.module.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ProgressBar from "@ramonak/react-progress-bar";
+import httpService from '../../Services/httpService';
 
 const QuizGame = () => {
   const [quiz, setQuiz] = useState(['']);
@@ -38,7 +39,7 @@ const QuizGame = () => {
 
   const handleClickBackToHome = async () => {
     await fetch(
-      `http://localhost:3001/api/players/${localStorage.getItem('id')}`,
+      httpService.getUrl(`api/players/${localStorage.getItem('id')}`),
       // `  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`,
       {
         method: 'PUT',
@@ -61,7 +62,8 @@ const QuizGame = () => {
 
   useEffect(() => {
     function fetchData() {
-      fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+      fetch(httpService.getUrl(`api/players/${localStorage.getItem('id')}`), {
+      // fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
       // fetch(`:   https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
         headers: {
           'Content-Type': 'application/json',

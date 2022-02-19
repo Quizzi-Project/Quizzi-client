@@ -5,6 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ReactRouter from './Router/router';
 
+import httpService from './Services/httpService';
+
+console.log('we are runing in', httpService.getUrl()); // TODO: remove log
+console.log('(process.env.NODE_ENV', process.env.NODE_ENV); // TODO: remove log
+
 ReactDOM.render(
   <StrictMode>
     <BrowserRouter>

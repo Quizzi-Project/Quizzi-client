@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Container, TextField, Button, Link, Typography } from '@material-ui/core';
 import styles from './RegisterForm.module.css';
+import httpService from '../../Services/httpService';
+
 
 
 const RegisterForm = () => {
@@ -14,7 +16,8 @@ const RegisterForm = () => {
 
     async function registerUser(event) {
         event.preventDefault()
-        const response = await fetch('http://localhost:3001/api/players', {
+       
+        const response = await fetch(httpService.getUrl('api/players'), {
         // const response = await fetch('https://quizzi-app.herokuapp.com/api/players', {
             method: 'POST',
             headers: {
