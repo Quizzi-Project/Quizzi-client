@@ -1,6 +1,6 @@
 function getUrl(entityName = '') {
   return process.env.NODE_ENV !== 'development'
-    ? `/${entityName}`
+    ? `https://quizzi-app.herokuapp.com/${entityName}`
     : `http://localhost:3001/${entityName}`;
 }
 
