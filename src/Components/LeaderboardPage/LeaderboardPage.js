@@ -17,6 +17,7 @@ const LeaderboardPage = () => {
   useEffect(() => {
     const fetchData = () => {
       fetch(`http://localhost:3001/api/players`, {
+      // fetch(`https://quizzi-app.herokuapp.com/api/players`, {
         headers: {
           'Content-Type': 'application/json',
         },

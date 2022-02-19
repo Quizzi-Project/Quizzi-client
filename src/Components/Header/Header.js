@@ -20,6 +20,9 @@ const Header = () => {
             marginRight: '18vh',
             color: '#F84570',
         },
+        paper:{
+            backgroundColor: '#2A0D2E',
+        },
     }));
 
     useEffect(() => {
@@ -60,18 +63,8 @@ const Header = () => {
                     Quizzi
                 </Typography>
             </ToolBar>
-            <SwipeableDrawer
-                anchor="left"
-                open={open}
-                onOpen={() => setOpen(true)}
-                onClose={() => setOpen(false)}
-            >
-                <div
-                    onClick={() => setOpen(false)}
-                    onKeyPress={() => setOpen(false)}
-                    role="button"
-                    tabIndex={0}
-                >
+            <SwipeableDrawer className={{ paper: makeStyles.paper }} anchor="left" open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)} >
+                <div onClick={() => setOpen(false)} onKeyPress={() => setOpen(false)} role="button" tabIndex={0} >
                     <IconButton>
                         <CloseIcon />
                     </IconButton>
@@ -82,14 +75,8 @@ const Header = () => {
                         <ListItem key={item.name}>
                             {item.icon}
                             <Link
-                                className={styles.link}
-                                color="textPrimary"
-                                variant="button"
-                                underline="none"
-                                href={item.href}
-                                icon={item.icon}
-                                onClick={item.click}
-                            >
+                                className={styles.link} color="textPrimary" variant="button" underline="none" href={item.href} icon={item.icon}
+                                onClick={item.click} >
                                 {item.name}
                             </Link>
                         </ListItem>

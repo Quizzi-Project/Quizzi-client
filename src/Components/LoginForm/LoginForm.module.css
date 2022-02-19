@@ -5,6 +5,14 @@
     padding-top: 5vh;
 }
 
+#ask{
+    margin-top: 6vh;
+}
+
+#textfield, #textfield1, #ask{
+    color: white;
+}
+
 #signInButton {
     width: 210px;
     height: 58px;

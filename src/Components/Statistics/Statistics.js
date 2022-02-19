@@ -5,8 +5,8 @@ import styles from './Statistics.module.css';
 const Statistics = () => {
     const [details, setDetails] = useState('');
     useEffect(() => {
-        // fetch(`https://meadaysofcode.herokuapp.com/api/players/${localStorage.getItem('id')}`)
         fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+        // fetch(`  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + localStorage.getItem('token')

@@ -15,27 +15,13 @@ const EditProfilePage = () => {
   const [name, setName] = useState(localStorage.getItem('userName'));
   const [password, setPassword] = useState('');
 
-  //     useEffect(() => {
-  //         setName(localStorage.getItem('name'));
-  //         setPassword(localStorage.getItem('password'))
-  // }, []);
-
-  // const updateData = () => {
-  //     axios.put(`http://localhost:3000/api/players/${localStorage.getItem('id')}`, {
-  //     name: name,
-  //     password: password
-  //   })
-  // }
-  // useEffect(() => {
-  //     updateData();
-  // })
-
   const updateData = (ev) => {
     if (ev) {
       ev.preventDefault();
     }
     setRequestMessage('');
     fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+    // fetch(`https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -46,38 +32,16 @@ const EditProfilePage = () => {
       }),
     })
       .then((response) => {
-        // if (response.status === 'ok') {
         console.log(response);
-        // navigate('/');
-        setRequestMessage('Success User Update!');
-        // }
+        setRequestMessage('User successfully updated!');
       })
       .catch((err) => {
-        setRequestMessage('Failed to update!');
+        setRequestMessage('Failed to update user.');
         throw err;
       })
       .finally(() => {
-        console.log('finally'); // TODO: remove log
+        console.log('finally');
       });
-
-    // try{
-    //     const response = await fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //             'name': name,
-    //             'password': password
-    //         }),
-    //     })
-    //     console.log(response);
-    //     navigate('/');
-    // }catch(err){
-    //     throw err;
-    // } finally{
-    //     console.log('finally'); // TODO: remove log
-    // }
   };
 
   return (
@@ -86,41 +50,16 @@ const EditProfilePage = () => {
         Edit Profile
       </Typography>
       <form onSubmit={updateData} style={{ textAlign: 'center' }}>
-        <TextField
-          color='secondary'
-          label='Full Name'
-          type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          fullWidth
-          margin='normal'
-          autoComplete='name'
-          autoFocus
-        />
-        <TextField
-          color='secondary'
-          label='Password'
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          fullWidth
-          margin='normal'
-        />
-        {/* <Link href="/" variant="h6" id={styles.link}> */}
-        {/* <Button type="submit" id={styles.updateButton} variant="contained" color="secondary" onClick={updateData}> */}
-        <Button
-          type='submit'
-          id={styles.updateButton}
-          variant='contained'
-          color='secondary'
-        >
+        <TextField id={styles.entry} color='secondary' label='Full Name' type='text'
+          value={name} onChange={(e) => setName(e.target.value)} fullWidth margin='normal' autoComplete='name' autoFocus />
+        <TextField id={styles.entry1} color='secondary' label='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}
+          fullWidth margin='normal' />
+        <Button type='submit' id={styles.updateButton} variant='contained' color='secondary' >
           Update Account
         </Button>
-        {/* </Link> */}
       </form>
       {!!requestMessage && (
-        <Typography variant='h6'>{requestMessage}</Typography>
+        <Typography id={styles.req} variant='h6'>{requestMessage}</Typography>
       )}
     </Container>
   );

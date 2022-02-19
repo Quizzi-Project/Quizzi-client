@@ -17,7 +17,7 @@ const LoginForm = () => {
   async function loginUser(event) {
     event.preventDefault();
     const response = await fetch('http://localhost:3001/api/players/login', {
-      // const response = await fetch('https://quizzifinal.herokuapp.com/api/players/login', {
+      // const response = await fetch('https://quizzi-app.herokuapp.com/api/players/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,53 +44,19 @@ const LoginForm = () => {
         <br />
         <span className={styles.subtitle}>where Learning is FUN</span>
       </Typography>
-      <Typography
-        variant='h3'
-        component='h3'
-        align='center'
-        id={styles.login_styling}
-      >
+      <Typography variant='h3' component='h3' align='center' id={styles.login_styling} >
         Login
       </Typography>
 
       <form onSubmit={loginUser} style={{ textAlign: 'center' }}>
-        <TextField
-          color='secondary'
-          label='Email'
-          type='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          fullWidth
-          margin='normal'
-          autoComplete='email'
-          autoFocus
-        />
-        <TextField
-          color='secondary'
-          label='Password'
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          fullWidth
-          margin='normal'
-        />
-
-        <Button
-          type='submit'
-          id={styles.signInButton}
-          variant='contained'
-          color='secondary'
-        >
+        <TextField id={styles.textfield} color='secondary' label='Email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required
+          fullWidth margin='normal' autoComplete='email' autoFocus />
+        <TextField id={styles.textfield1} color='secondary' label='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}
+          required fullWidth margin='normal'/>
+        <Button type='submit' id={styles.signInButton} variant='contained' color='secondary' >
           SIGN IN
         </Button>
-        <Typography
-          style={{ marginTop: '6vh' }}
-          display='block'
-          variant='subtitle2'
-          align='center'
-        >
+        <Typography id={styles.ask} display='block' variant='subtitle2' align='center' >
           Don't have an account?
         </Typography>
         <Link id={styles.regLink} href='/register' variant='body2'>

@@ -3,6 +3,7 @@ import { Container, Typography, Button } from '@material-ui/core';
 import styles from './QuizGame.module.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const QuizGame = () => {
   const [quiz, setQuiz] = useState(['']);
@@ -38,6 +39,7 @@ const QuizGame = () => {
   const handleClickBackToHome = async () => {
     await fetch(
       `http://localhost:3001/api/players/${localStorage.getItem('id')}`,
+      // `  https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`,
       {
         method: 'PUT',
         headers: {
@@ -53,9 +55,14 @@ const QuizGame = () => {
     navigate('/');
   };
 
+  const renderProgressBar = () => {
+    return <ProgressBar completed={number*10} bgColor='#ff4d77' width='80%' margin='8%'/>;
+  };
+
   useEffect(() => {
     function fetchData() {
       fetch(`http://localhost:3001/api/players/${localStorage.getItem('id')}`, {
+      // fetch(`:   https://quizzi-app.herokuapp.com/api/players/${localStorage.getItem('id')}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -103,37 +110,20 @@ const QuizGame = () => {
       </section>
       <section hidden={hideQuiz}>
         <Container maxWidth='sm' className={styles.container}>
-          <div className={styles.circleMeasures}>
-            <div className={styles.innerCircle}>
-              <div className={styles.bar}>
-                <Typography id={styles.curr} align='center' variant='subtitle2'>
-                  {number + 1}/{quiz.length}
-                </Typography>
-              </div>
-            </div>
-          </div>
+          {renderProgressBar()}
+              <Typography id={styles.progress} align='center' variant='subtitle2'>
+              {number + 1}/{quiz.length}
+              </Typography>
           <Typography variant='h4' align='left' id={styles.title}>
             Question {number + 1}
           </Typography>
           {quiz[number] && (
             <>
-              <h2
-                className={styles.quest}
-                dangerouslySetInnerHTML={{ __html: quiz[number].question }}
-              ></h2>
-
+              <h2 className={styles.quest} dangerouslySetInnerHTML={{ __html: quiz[number].question }}></h2>
               <section>
                 {quiz[number].options.map((item, index) => (
-                  <Button
-                    variant='contained'
-                    color='secondary'
-                    id={styles.answerButton}
-                    key={index}
-                    onClick={pickAnswer}
-                  >
-                    <section
-                      dangerouslySetInnerHTML={{ __html: item }}
-                    ></section>
+                  <Button variant='contained' color='secondary' id={styles.answerButton} key={index} onClick={pickAnswer}>
+                    <section dangerouslySetInnerHTML={{ __html: item }} ></section>
                   </Button>
                 ))}
               </section>

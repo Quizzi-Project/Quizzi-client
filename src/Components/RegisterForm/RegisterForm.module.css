@@ -10,8 +10,15 @@
     margin-top: 5vh;
 }
 
+#textfield, #textfield1, #textfield2, #ask{
+    color: white;
+}
+
+#ask{
+    margin-top: 6vh;
+}
+
 #title_colors{
-    /* font-weight: bold; */
     color: #F84570;
 }
 
